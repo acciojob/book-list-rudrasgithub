@@ -2,25 +2,27 @@
 const title = document.getElementById("title")
 const author = document.getElementById("author")
 const isbn = document.getElementById("isbn")
+const book_list = document.getElementById("book-list")
 
 function AddBook() {
 	event.preventDefault();
-	const book_list = document.querySelector("#book-list")
 	const row = document.createElement("tr")
-	
-	const title_cell = document.createElement("td")
-	const author_cell = document.createElement("td")
-	const isbn_cell = document.createElement("td")
-	
-	title_cell.textContent = title.value;
-	author_cell.textContent = author.value;
-	isbn_cell.textContent = isbn.value;
-		
-	row.appendChild(title_cell)
-	row.appendChild(author_cell)
-	row.appendChild(isbn_cell)
-	
-	book_list.appendChild(row)
-}
 
+	row.innerHTML = `
+		<td>${title.value}</td>
+		<td>${author.value}</td>
+		<td>${isbn.value}</td>
+		<td><button class="delete" style="background-color:red;cursor:pointer;color:white">X</button></td>
+	`
+	book_list.appendChild(row)
+	title.value = ""
+	author.value = ""
+	isbn.value = ""
+}
+function DeleteBook(event) {
+	if(event.target.classList.contains("delete")) {
+		event.target.closest("tr").remove()
+	}
+}
+document.getElementById("book-list").addEventListener("click", DeleteBook)
 document.getElementById("submit").addEventListener("click", AddBook)
