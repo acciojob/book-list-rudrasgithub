@@ -4,8 +4,9 @@ const author = document.getElementById("author")
 const isbn = document.getElementById("isbn")
 const book_list = document.getElementById("book-list")
 
-function AddBook() {
+form.addEventListener("submit", (event) => {
 	event.preventDefault();
+	
 	const row = document.createElement("tr")
 
 	row.innerHTML = `
@@ -16,14 +17,11 @@ function AddBook() {
 	`
 	book_list.appendChild(row)
 	
-	title.value = ""
-	author.value = ""
-	isbn.value = ""
+	form.reset()
 }
-function DeleteBook(event) {
+
+book_list.addEventListener("click", (event) => {
 	if(event.target.classList.contains("delete")) {
 		event.target.closest("tr").remove()
 	}
 }
-document.getElementById("book-list").addEventListener("click", DeleteBook)
-document.getElementById("submit").addEventListener("click", AddBook)
