@@ -15,6 +15,7 @@ function AddBook() {
 		<td><button class="delete" style="background-color:red;cursor:pointer;color:white">X</button></td>
 	`
 	book_list.appendChild(row)
+	
 	title.value = ""
 	author.value = ""
 	isbn.value = ""
