@@ -3,6 +3,7 @@ const title = document.getElementById("title")
 const author = document.getElementById("author")
 const isbn = document.getElementById("isbn")
 const book_list = document.getElementById("book-list")
+const form = document.getElementById("book-form")
 
 form.addEventListener("submit", (event) => {
 	event.preventDefault();
@@ -16,12 +17,11 @@ form.addEventListener("submit", (event) => {
 		<td><button class="delete" style="background-color:red;cursor:pointer;color:white">X</button></td>
 	`
 	book_list.appendChild(row)
-	
 	form.reset()
-}
+})
 
 book_list.addEventListener("click", (event) => {
 	if(event.target.classList.contains("delete")) {
 		event.target.closest("tr").remove()
 	}
-}
+})
