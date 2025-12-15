@@ -14,8 +14,10 @@ form.addEventListener("submit", (event) => {
 		<td>${title.value}</td>
 		<td>${author.value}</td>
 		<td>${isbn.value}</td>
-		<td><button class="delete" style="background-color:red;cursor:pointer;color:white">X</button></td>
+		<td><button class="delete" style="background-color:red;cursor:pointer;color:white;border:none">X</button></td>
 	`
+	row.id = "center"
+	row.style.cssText = "background-color:grey;opacity:0.4;border:none;"
 	book_list.appendChild(row)
 	form.reset()
 })

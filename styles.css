@@ -3,3 +3,16 @@ span {
 	color: blue;
 	text-align: center;
 }
+.table-stripped {
+	width: 100%;
+}
+input {
+	width: 100%;
+	margin: 2px;
+}
+tbody {
+	width: 100%
+}
+#center {
+	text-align: center;
+}
